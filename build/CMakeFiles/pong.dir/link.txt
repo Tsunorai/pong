@@ -1,0 +1,1 @@
+clang++ -Wl,--dependency-file=CMakeFiles/pong.dir/link.d CMakeFiles/pong.dir/src/logic/game.cpp.o CMakeFiles/pong.dir/src/logic/update.cpp.o CMakeFiles/pong.dir/src/main.cpp.o CMakeFiles/pong.dir/src/modules/GameState.cpp.o CMakeFiles/pong.dir/src/render/paint.cpp.o -o pong  /usr/lib/libraylib.so.6.0.0 -lm
