@@ -37,15 +37,16 @@ namespace Pong
 
     void GameState::initializePos(const Settings& settings)
     {
-        ballState = Ball(settings.windowW / 2, settings.windowH / 2, settings.windowH / 50, 400, RAYWHITE);
+        Vector2 ballPos{settings.windowW / 2, settings.windowH / 2};
+        ballState = Ball(ballPos, settings.windowH / 50, 400, RAYWHITE);
 
         int width = settings.windowW / 50;
         int height = settings.windowH / 5;
-        float y = settings.windowH / 2 - height / 2.0f;
-        float x = settings.windowW - width;
+        Vector2 barPosP1{settings.windowW - width, settings.windowH / 2 - height / 2.0f};
+        Vector2 barPosP2{0, settings.windowH / 2 - height / 2.0f};
         barsState = {
-            Bar(0, y, 200, width, height, KEY_W, KEY_S, RAYWHITE),
-            Bar(x, y, 200, width, height, KEY_UP, KEY_DOWN, RAYWHITE)};
+            Bar(barPosP1, 200, width, height, KEY_W, KEY_S, RAYWHITE),
+            Bar(barPosP2, 200, width, height, KEY_UP, KEY_DOWN, RAYWHITE)};
     }
 
     void GameState::startGame()

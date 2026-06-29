@@ -10,11 +10,11 @@ namespace Pong
     }
     void paintBall(const Ball& ball)
     {
-        DrawCircle(static_cast<int>(ball.x), static_cast<int>(ball.y), ball.radius, ball.color);
+        DrawCircle(static_cast<int>(ball.position.x), static_cast<int>(ball.position.y), ball.radius, ball.color);
     }
     void paintBar(const Bar& bar)
     {
-        DrawRectangle(static_cast<int>(bar.x), static_cast<int>(bar.y), bar.width, bar.height, bar.color);
+        DrawRectangle(static_cast<int>(bar.position.x), static_cast<int>(bar.position.y), bar.width, bar.height, bar.color);
     }
 
     void paintGame(const GameState& state)

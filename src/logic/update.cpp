@@ -12,12 +12,12 @@ namespace Pong
 
         if (IsKeyDown(bar.keyUp))
         {
-            bar.y -= bar.speed * dt;
+            bar.position.y -= bar.speed * dt;
         }
 
         if (IsKeyDown(bar.keyDown))
         {
-            bar.y += bar.speed * dt;
+            bar.position.y += bar.speed * dt;
         }
     }
     void updateBall(Ball& ball)
@@ -26,8 +26,8 @@ namespace Pong
 
         std::cout << ball.direction.x << " " << ball.direction.y << " " << ball.speed << std::endl;
 
-        ball.x += ball.direction.x * ball.speed * dt;
-        ball.y += ball.direction.y * ball.speed * dt;
+        ball.position.x += ball.direction.x * ball.speed * dt;
+        ball.position.y += ball.direction.y * ball.speed * dt;
     }
 
     void update(GameState& state)
