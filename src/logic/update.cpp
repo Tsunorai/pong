@@ -10,12 +10,12 @@ namespace Pong
 
         if (IsKeyDown(bar.keyUp))
         {
-            bar.position.y -= bar.speed * dt;
+            bar.rect.y -= bar.speed * dt;
         }
 
         if (IsKeyDown(bar.keyDown))
         {
-            bar.position.y += bar.speed * dt;
+            bar.rect.y += bar.speed * dt;
         }
     }
     void updateBall(GameState& state)
