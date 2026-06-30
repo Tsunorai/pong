@@ -1,22 +1,18 @@
 #include "game.hpp"
 
 #include "paint.hpp"
-#include "update.hpp"
 #include "raylib.h"
-
-#include <print>
+#include "update.hpp"
 
 namespace Pong
 {
     void Game::init()
     {
-        state = GameState(settings);
         InitWindow(settings.windowW, settings.windowH, "Pong");
     }
 
     void Game::run()
-    {        
-        std::print("Direction");
+    {
         state.startGame();
         while (!WindowShouldClose())
         {
