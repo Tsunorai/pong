@@ -18,5 +18,9 @@ namespace Pong
         {
             windowH = newWindowH;
         }
+        
+        Vector2 monitorPosition = GetMonitorPosition(monitor);
+        SetWindowPosition(monitorPosition.x, monitorPosition.y);
+        SetWindowSize(windowW, windowH);
     }
 } // namespace Pong

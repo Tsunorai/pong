@@ -8,12 +8,12 @@ namespace Pong
     class Game
     {
     public:
-        void init();
+        Game();
         void run();
         void clean();
 
     private:
         Settings settings;
-        GameState state{settings};
+        GameState state;
     };
 } // namespace Pong

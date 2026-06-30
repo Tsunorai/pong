@@ -6,9 +6,11 @@
 
 namespace Pong
 {
-    void Game::init()
+    Game::Game()
     {
         InitWindow(settings.windowW, settings.windowH, "Pong");
+        settings = Settings();
+        state = GameState(settings);
     }
 
     void Game::run()
