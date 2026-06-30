@@ -5,16 +5,15 @@
 
 namespace Pong
 {
-    class Game 
+    class Game
     {
     public:
-        void init();
-
+        Game();
         void run();
-
         void clean();
+
     private:
         Settings settings;
         GameState state;
     };
-}
+} // namespace Pong

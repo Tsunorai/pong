@@ -2,8 +2,6 @@
 #include "Bar.hpp"
 #include "GameState.hpp"
 
-#include <iostream>
-
 namespace Pong
 {
     void updateBar(Bar& bar)
@@ -12,19 +10,19 @@ namespace Pong
 
         if (IsKeyDown(bar.keyUp))
         {
-            bar.position.y -= bar.speed * dt;
+            bar.rect.y -= bar.speed * dt;
         }
 
         if (IsKeyDown(bar.keyDown))
         {
-            bar.position.y += bar.speed * dt;
+            bar.rect.y += bar.speed * dt;
         }
     }
-    void updateBall(Ball& ball)
+    void updateBall(GameState& state)
     {
-        float dt = GetFrameTime();
+        Ball& ball = state.getBallState();
 
-        std::cout << ball.direction.x << " " << ball.direction.y << " " << ball.speed << std::endl;
+        float dt = GetFrameTime();
 
         ball.position.x += ball.direction.x * ball.speed * dt;
         ball.position.y += ball.direction.y * ball.speed * dt;
@@ -32,7 +30,7 @@ namespace Pong
 
     void update(GameState& state)
     {
-        updateBall(state.getBallState());
+        updateBall(state);
         updateBar(state.getBarP1());
         updateBar(state.getBarP2());
     }

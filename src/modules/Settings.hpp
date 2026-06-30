@@ -4,7 +4,8 @@ namespace Pong
 {
     struct Settings
     {
-        float windowH = 1000;
+        Settings();
+        float windowH = 800;
         float windowW = 1200;
         // ...
     };
